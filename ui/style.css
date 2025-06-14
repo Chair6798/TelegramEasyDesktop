@@ -1,0 +1,16 @@
+QMainWindow {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+QTextEdit {
+    background-color: #252525;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+QLineEdit {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+}
