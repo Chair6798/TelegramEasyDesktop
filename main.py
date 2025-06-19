@@ -11,12 +11,12 @@ from PyQt6.QtCore import QThread, pyqtSignal
 from PyQt6.QtWidgets import QMessageBox
 from threading import Thread
 from time import sleep as wait
-
+from telethon.network import ConnectionTcpMTProxyRandomizedIntermediate
 from telethon import TelegramClient, events
 
 API_ID = 21390934
 API_HASH = "12f62a29ab589e36b4a8a5a1e135dfda"
-PHONE = input("Your phone: ")
+
 window = None
 tg_manager = None
 class TelegramManager:  # Переименуем класс, чтобы избежать путаницы
@@ -224,19 +224,20 @@ class MainWindow(QMainWindow):
         return await self.tg_client.get_dialogs()
 
 
-
+PHONE = input("Your phone: ")
 def main():
     global tg_manager
     global window
-    app = QApplication(sys.argv)
+    global PHONE
+    #app = QApplication(sys.argv)
     
     tg_manager = TelegramManager(API_ID, API_HASH, PHONE)  # Используем TelegramManager
-    window = MainWindow(tg_manager)
-    window.show()
+    #window = MainWindow(tg_manager)
+    #window.show()
     
     
 
-    sys.exit(app.exec())
+    #sys.exit(app.exec())
 
 if __name__ == "__main__":
     main()
